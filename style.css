@@ -7,22 +7,27 @@
 
 body {
   display: grid;
-  grid-template-columns: minmax(120px, 1fr) 1.5fr 1.5fr 1fr;
-  grid-template-rows: 1fr 5fr;
+  grid-template-columns: repeat(auto-fill, minmax(min(13rem, 100%), 1fr));
+  /*grid-template-rows: minmax(150px, 1fr) minmax(500px, 5fr);*/
+  grid-template-rows: 1fr 8fr;
+  height: 100%;
 }
 
 #header {
   display: grid;
   grid-column: 2 / -1;
+  grid-row: 1 / 2;
   grid-template-rows: 1fr 1.8fr;
   padding: 5px;
-  margin: -1px;
   align-items: center;
+  margin-bottom: 3px;
+  box-shadow: 3px 0px 5px #616161;
 }
 
 .header-upper-content {
   display: grid;
   grid-template-columns: 2fr 1fr;
+  align-items: center;
 }
 
 .rightheader {
@@ -31,6 +36,17 @@ body {
   gap: 0.3rem;
   margin: 5px;
   margin-left: 30px;
+  justify-content: center;
+}
+
+.notification-link {
+  display: grid;
+  justify-content: center;
+}
+
+.notifications {
+  display: grid;
+  align-items: center;
 }
 
 .main-svg {
@@ -39,16 +55,31 @@ body {
   width: 20px;
 }
 
+.search-icon {
+  justify-self: right;
+}
+
 .searchbar {
   display: grid;
-  grid-template-columns: 1fr 20fr;
+  grid-template-columns: 1fr 20fr 1fr;
   height: 28px;
   align-items: center;
+  gap: 0.5rem;
 }
 
 .searchfield {
   background-color: #ddd;
   height: 100%;
+  border-radius: 1rem;
+  padding: 0 10px;
+}
+
+.button {
+  padding: 5px;
+  background-color: #144299;
+  border-radius: 1rem;
+  color: #eee;
+  width: 90px;
 }
 
 .header-lower-content {
@@ -78,22 +109,21 @@ body {
   grid-template-rows: 1fr 2fr 8fr;
   grid-column: 1 / 2;
   grid-row: 1 / -1;
-  height: 100vh;
+  height: 100%;
   align-items: flex-start;
   background-color: #144299;
   color: #eee;
-  padding-left: 8px;
-  margin: -1px;
+  padding-left: 1rem;
+  margin: 0px;
 }
 
 .logo-group {
   display: grid;
   grid-template-columns: 1fr 6fr;
   height: 60px;
-  margin-top: 5px;
+  margin-top: 1rem;
   align-items: center;
-  font-size: 1.8rem;
-  margin-left: -4px;
+  font-size: 2rem;
   gap: 8px;
 }
 
@@ -120,44 +150,70 @@ body {
 
 #sidebar-top-group {
   margin-top: 50px;
-  line-height: 1.7rem;
+  line-height: 2rem;
+  font-size: 1.5rem;
 }
 
 #sidebar-bottom-group {
   margin-top: 50px;
-  line-height: 1.7rem;
+  line-height: 2rem;
+  font-size: 1.5rem;
 }
 
 #content-wrapper {
   display: grid;
   grid-column: 2 / -1;
-  grid-row: 2 / -1;
+  grid-row: 2 / span 5;
+  grid-auto-flow: column;
   grid-template-columns: 6fr 2fr;
-  grid-template-rows: 1fr 1fr;
   background-color: #ddd;
+  padding-right: 2px;
 }
 
 .projects {
   grid-column: 1 / 2;
-  grid-row: 1 / -1;
+  grid-row: 2 / -1;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 3rem;
-  margin: 5px;
+  grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1rem 1rem 1rem 1rem;
+  align-content: space-around;
 }
 
 .card {
   display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2fr 4fr 1fr;
+  border-width: 0 0 0 6px;
+  border-color: #ea2;
+  border-radius: 7px;
+  background-color: #eee;
+  padding: 6px;
+  padding-top: 1rem;
+  box-shadow: 10px 5px 15px #616161;
+  margin: 2rem;
+}
+
+.card-title {
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  height: auto;
+  width: 95%;
+  margin-bottom: 10px;
 }
 
 .icon-row {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  gap: 1rem;
+  gap: 0.4rem;
+  height: 2rem;
 }
 
-.card-action:nth-child(1) {
+.card-action:first-child {
   grid-column: 7 / 8;
 }
 
@@ -167,11 +223,65 @@ body {
 }
 
 .announcements {
+  display: grid;
   grid-column: 2 / -1;
   grid-row: 1 / 2;
 }
 
+.announcement-list {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 2rem;
+  border-width: 0 0 0 6px;
+  border-color: #e44;
+  border-radius: 7px;
+  background-color: #eee;
+  padding: 6px 0px;
+  margin-top: 1rem;
+}
+
+.announcement {
+  height: 5rem;
+  border-width: 3px 3px 3px 0px;
+  border-color: #ff5f5f;
+  border-radius: 6px;
+  padding: 6px;
+  margin: 2px;
+}
+
 .trending {
+  display: grid;
   grid-column: 2 / -1;
   grid-row: 2 / -1;
+  border-width: 0 0 0 6px;
+  border-color: #44e;
+  border-radius: 7px;
+  background-color: #eee;
+  padding: 6px 0px;
+  margin-top: 1rem;
+  width: 270px;
+}
+
+.trend-title {
+  line-height: 1rem;
+  padding: 4px 10px;
+}
+
+.trend-list {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.trend {
+  height: 60px;
+  height: 5rem;
+  border-width: 3px 0px 3px 0px;
+  border-color: #5f5fff;
+  border-radius: 6px;
+  padding: 6px;
+  margin: 2px;
+}
+
+footer {
+  grid-row: 6 / -1;
 }
