@@ -267,6 +267,7 @@ body {
   padding: 6px 0px;
   margin-top: 2rem;
   max-width: 250px;
+  box-shadow: 10px 5px 15px #616161;
 }
 
 .announcement {
@@ -287,8 +288,9 @@ body {
   border-radius: 7px;
   background-color: #eee;
   padding: 6px 0px;
-  margin-top: 2rem;
+  margin: 2rem 0 3.3rem 0;
   max-width: 270px;
+  box-shadow: 10px 5px 15px #616161;
 }
 
 .trend-title {
