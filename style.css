@@ -279,6 +279,11 @@ body {
   margin: 2px;
 }
 
+.announcement-link {
+  text-decoration: none;
+  color: #111;
+}
+
 .trending {
   display: grid;
   grid-column: 2 / -1;
