@@ -9,7 +9,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(13rem, 100%), 1fr));
   /*grid-template-rows: minmax(150px, 1fr) minmax(500px, 5fr);*/
-  grid-template-rows: 1fr 8fr 2.3rem;
+  grid-template-rows: minmax(150px, .3fr) minmax(200px, 5fr) 2.3rem;
   height: 100%;
 }
 
@@ -198,17 +198,17 @@ body {
   grid-column: 1 / 2;
   grid-row: 2 / -1;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
-  margin: 1rem 1rem 2rem 1rem;
+  margin: 1rem 1rem 1rem 1rem;
   align-content: space-around;
 }
 
 .card {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 2fr 4fr 1fr;
+  grid-template-rows: 1.5fr 4fr 1fr;
   border-width: 0 0 0 6px;
   border-color: #ea2;
   border-radius: 7px;
@@ -216,12 +216,15 @@ body {
   padding: 6px;
   padding-top: 1rem;
   box-shadow: 10px 5px 15px #616161;
-  margin: 2rem;
+  margin: 1rem;
+  font-size: 1.3rem;
 }
 
 .card-title {
   height: auto;
   margin-bottom: 10px;
+  font-size: 2rem;
+  align-self: center;
 }
 
 .card-text {
@@ -255,13 +258,14 @@ body {
 .announcement-list {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
-  gap: 2rem;
+  gap: 1rem;
   border-width: 0 0 0 6px;
   border-color: #e44;
   border-radius: 7px;
   background-color: #eee;
   padding: 6px 0px;
-  margin-top: 3rem;
+  margin-top: 2rem;
+  max-width: 250px;
 }
 
 .announcement {
@@ -283,7 +287,7 @@ body {
   background-color: #eee;
   padding: 6px 0px;
   margin-top: 2rem;
-  width: 270px;
+  max-width: 270px;
 }
 
 .trend-title {
